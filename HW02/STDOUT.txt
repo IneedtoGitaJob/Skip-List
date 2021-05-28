@@ -1,0 +1,16 @@
+For the input File named java.io.FileReader@42a57993
+With the RNG unseeded,
+ the current Skip List is shown below:
+---infinity
+110;
+198;
+270;
+302;302;
+354;
+503;
+596;
+603;
+629;629;
+947;
++++infinity
+---End of Skip List---

@@ -20,20 +20,17 @@ public static void main(String[]args)throws IOException{
 	
 try {
 FileWriter output = new FileWriter("STDOUT.txt");
-FileWriter err = new FileWriter("STDERR.txt");
-FileReader input = new FileReader(args[0]);
+FileReader input = new FileReader("input.txt");
 Scanner reader = new Scanner(input);
 
 String instruction;
-
-difficultyIndicator(err);
 
 int seed = 42;
 if(args.length == 2) {
 	seed = Integer.parseInt(args[1]);
 }	
 
-output.write("For the input File named "+args[0]+"\n");
+output.write("For the input File named "+input+"\n");
 if(args.length == 2) {
 	output.write("With the RNG seeded,\n");
 }
@@ -89,8 +86,8 @@ case "p": printAll(root, output, args);break;
 case "q":
 	input.close();
 	reader.close();
-	err.close();
 	output.close();
+	System.out.println("process complete");
 	System.exit(0);
 }
 }
@@ -104,17 +101,6 @@ System.exit(1);
 }
 
 
-}
-
-public static void difficultyIndicator(FileWriter err){
-	String out = "an478360;4;15\n";
-	try {
-err.write(out);
-	}
-	catch(IOException ex) {
-		   System.out.println("Error writing to file");                  
-
-		}
 }
 
 //Inserts a new node
